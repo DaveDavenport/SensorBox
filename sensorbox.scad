@@ -6,7 +6,7 @@
 
 $fn = 100;
 
-$lid = true;
+$lid = false;
 $case = true;
 
 $separator = true;
@@ -14,6 +14,8 @@ $extra_height = 4;
 $display = false;
 
 $usb = false;
+
+$powerplug = true;
 
 module battery_case ( )
 {
@@ -187,6 +189,14 @@ difference()
 {
     box();
 
+    if ( $powerplug )
+    {
+        translate([15,60,10]) {
+            rotate([90,90,0]) {
+                cylinder(d=8.0, h=10);
+            }
+        }
+    }
     if ( $usb )
     {
         translate([55-11/2,52,10-2]){

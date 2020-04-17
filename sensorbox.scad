@@ -6,7 +6,7 @@
 
 $fn = 100;
 
-$lid = false;
+$lid = true;
 $case = true;
 
 $separator = true;

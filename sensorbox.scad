@@ -6,16 +6,17 @@
 
 $fn = 100;
 
-$lid = true;
+$lid = false;
 $case = true;
 
-$separator = true;
-$extra_height = 4;
+$separator = false;
+$extra_height = -3;
 $display = false;
 
-$usb = false;
+$usb = true;
+$standoff = false;
 
-$powerplug = true;
+$powerplug = false;
 
 module battery_case ( )
 {
@@ -245,11 +246,15 @@ if ( $display )
 
 if ( $case ) {
     translate([100,25,0])
+       if ( $standoff ) {
         difference()
+    
         {
+         
             cylinder ( r=6.0, h=10);
             translate([0,0,1])
                 cylinder ( d=3.0, h=11);
+            }
         }
 }
 
